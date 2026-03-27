@@ -1,16 +1,12 @@
 def is_singleton(factory):
-    objekt1 = factory()
-    objekt2 = factory()
-    return objekt1 is objekt2
+    esimene = factory()
+    teine = factory()
+    return esimene is teine
 
-class Database:
-    _instance = None
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
+class Kasutaja:
+    pass
 
-def loo_andmebaas():
-    return Database()
+def loo_kasutaja():
+    return Kasutaja()
 
-print(is_singleton(loo_andmebaas))
+print(is_singleton(loo_kasutaja))
